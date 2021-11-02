@@ -1,5 +1,9 @@
 package com.universal.aifun.baselibrary.common
 
+import com.universal.aifun.baselibrary.TKBaseApplication
+import com.universal.aifun.baselibrary.utils.SDCardUtils
+import java.io.File
+
 /**
  * Date:2021/5/10
  * Time:18:41
@@ -13,6 +17,18 @@ object ConfigConstants {
 
     /** 全局数据库名称 **/
     const val DB_SQL_NAME = "universaldb"
+
+    /** gilde配置数据 **/
+    //gild缓存大小
+    const val GILDE_DISKCACHESIZEBYTES = 1024 * 1024 * 100 // 100 MB
+
+    //gilde缓存路径
+    val GILDE_DISKCACHEDIR =
+        SDCardUtils.getExternalFilesDir(
+            TKBaseApplication.myApplication.applicationContext,
+            null
+        ).absolutePath + File.separator + "AGlideImage"
+
 
     /** 应用启动，权限判断返回码 **/
     const val PERMISSIONS_INIT_REQUEST_CODE = 1000
