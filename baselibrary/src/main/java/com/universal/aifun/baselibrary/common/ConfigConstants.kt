@@ -9,7 +9,10 @@ package com.universal.aifun.baselibrary.common
 object ConfigConstants {
 
     /** 错误日志名称 **/
-    const val ERROR_JOURNAL = "ANetworkshcoolError"
+    const val ERROR_JOURNAL = "AUniversalErrorLog"
+
+    /** 全局数据库名称 **/
+    const val DB_SQL_NAME = "universaldb"
 
     /** 应用启动，权限判断返回码 **/
     const val PERMISSIONS_INIT_REQUEST_CODE = 1000

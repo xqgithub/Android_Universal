@@ -6,6 +6,8 @@ import androidx.core.content.ContextCompat
 import com.universal.aifun.baselibrary.R
 import com.universal.aifun.baselibrary.base.BaseActivity
 import com.universal.aifun.baselibrary.common.ConfigConstants
+import com.universal.aifun.baselibrary.database.DBHelperModule
+import com.universal.aifun.baselibrary.database.User
 import com.universal.aifun.baselibrary.ui.presenters.StartUpPresenter
 import com.universal.aifun.baselibrary.ui.views.StartUpView
 import com.universal.aifun.baselibrary.utils.LogUtils
@@ -61,6 +63,15 @@ class StartUpActivity : BaseActivity(), StartUpView {
         mPresenter.setLogo { drawDrawableID: Int ->
             //获取图片的信息
             iv_logo.setImageDrawable(ContextCompat.getDrawable(this, drawDrawableID))
+        }
+
+
+        //测试数据库
+        with(User()) {
+            this.id = 1
+            this.name = "路飞"
+            this.sex = "luxian"
+            DBHelperModule.getInstance().insert(this)
         }
     }
 

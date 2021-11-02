@@ -7,6 +7,7 @@ import androidx.multidex.MultiDexApplication;
 import com.facebook.stetho.Stetho;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.mmkv.MMKV;
+import com.universal.aifun.baselibrary.database.DBHelperModule;
 import com.universal.aifun.baselibrary.help.MyActivityLifecycleCallbacks;
 import com.universal.aifun.baselibrary.help.MySPUtilsUser;
 import com.universal.aifun.baselibrary.utils.AppUtils;
@@ -71,6 +72,8 @@ public class TKBaseApplication extends MultiDexApplication {
         }
         //5.注册Activity生命周期监听回调，此部分一定加上，因为有些版本不加的话多语言切换不回来
         initActivityLifecycle();
+        //6.初始化数据库
+        DBHelperModule.getInstance().initDbHelp();
 
     }
 
