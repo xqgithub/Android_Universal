@@ -119,9 +119,19 @@ android {
         }
 
         release {
+            //混淆开关
+            minifyEnabled false
+            // 移除无用的resource文件
             shrinkResources false
-            minifyEnabled false   //混淆
+            // 是否zip对齐
+            zipAlignEnabled false
+            // 是否打开debuggable开关
+            debuggable false
+            // 是否打开jniDebuggable开关
+            jniDebuggable false
+            //添加秘钥
             signingConfig signingConfigs.config
+            //混淆规则配置文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
 //            manifestPlaceholders = [
