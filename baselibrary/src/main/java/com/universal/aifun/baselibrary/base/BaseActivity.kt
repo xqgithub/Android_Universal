@@ -1,6 +1,5 @@
 package com.universal.aifun.baselibrary.base
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Window
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity
