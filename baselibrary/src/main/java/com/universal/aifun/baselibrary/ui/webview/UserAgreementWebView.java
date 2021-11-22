@@ -31,7 +31,7 @@ import androidx.annotation.Nullable;
 import com.universal.aifun.baselibrary.R;
 import com.universal.aifun.baselibrary.TKBaseApplication;
 import com.universal.aifun.baselibrary.TKExtManage;
-import com.universal.aifun.baselibrary.base.BaseActivityObsolete;
+import com.universal.aifun.baselibrary.base.BaseActivity;
 import com.universal.aifun.baselibrary.common.ConfigConstants;
 import com.universal.aifun.baselibrary.help.MySPUtilsLanguage;
 import com.universal.aifun.baselibrary.utils.LogUtils;
@@ -51,7 +51,7 @@ import me.jessyan.autosize.internal.CustomAdapt;
  * Time:10:23
  * author:joker
  */
-public class UserAgreementWebView extends BaseActivityObsolete implements View.OnClickListener, CustomAdapt {
+public class UserAgreementWebView extends BaseActivity implements View.OnClickListener, CustomAdapt {
 
 
     private ImageView iv_close;
