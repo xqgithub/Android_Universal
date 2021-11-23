@@ -3,6 +3,8 @@ package com.universal.aifun.baselibrary.tinker.reporter;
 import android.content.Context;
 
 import com.tencent.tinker.lib.listener.DefaultPatchListener;
+import com.universal.aifun.baselibrary.common.ConfigConstants;
+import com.universal.aifun.baselibrary.utils.LogUtils;
 
 /**
  * Date:2021/11/23
@@ -29,7 +31,7 @@ public class CustomPatchListener extends DefaultPatchListener {
     @Override
     public int patchCheck(String path, String patchMd5) {
         //做自己的校验
-
+        LogUtils.i(ConfigConstants.TAG_ALL, "patchMd5 =-= " + patchMd5);
         return super.patchCheck(path, patchMd5);
     }
 }

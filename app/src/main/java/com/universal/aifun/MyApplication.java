@@ -9,9 +9,7 @@ import com.universal.aifun.baselibrary.TKBaseApplication;
 import com.universal.aifun.baselibrary.TKExtManage;
 
 /**
- * Author  guoyw
- * Date    2021/7/29
- * Desc
+ * 自定义Application
  */
 public class MyApplication extends TKBaseApplication {
 

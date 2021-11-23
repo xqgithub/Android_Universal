@@ -159,25 +159,26 @@ dependencies {
 
 /** 微信tinker 配置  **/
 def bakPath = file("${buildDir}/bakApk/")
+def filedir = "app-1123-16-53-24"
 
 ext {
     //是否启用tinker
     tinkerEnabled = true
 //每次打包完都需要更改下面的三个路径，如果支持多渠道打包，下面第四个参数也需要修改
     //old apk 的路径
-    tinkerOldApkPath = "${bakPath}/app-1123-14-40-03.apk"
+    tinkerOldApkPath = "${bakPath}/${filedir}.apk"
     //old apk 混淆 mapping 文件的路径
-    tinkerApplyMappingPath = "${bakPath}/app-1123-14-40-03-mapping.txt"
+    tinkerApplyMappingPath = "${bakPath}/${filedir}-mapping.txt"
     //old apk R文件的路径
-    tinkerApplyResourcePath = "${bakPath}/app-1123-14-40-03-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/${filedir}-R.txt"
 
     //多渠道打包的路径
-    tinkerBuildFlavorDirectory = "${bakPath}/app-1123-14-40-03"
+    tinkerBuildFlavorDirectory = "${bakPath}/${filedir}"
 }
 
-static def gitSha() {
+def gitSha() {
 //      每次打包的时候版本要一致，官方demo的是git的版本，这里使用versionName
-    String gitRev = "1.0"
+    String gitRev = "${rootProject.ext.android.versionName}"
     return gitRev
 }
 
@@ -461,5 +462,5 @@ task sortPublicTxt() {
         }
     }
 }
-
+/** 微信tinker 配置  **/
 
