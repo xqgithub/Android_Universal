@@ -286,7 +286,7 @@ public class PublicPracticalMethodFromJAVA {
      * 关闭栈内除了栈顶的所有的Activitys
      */
     public void closeActivitys() {
-        List<Activity> activities = TKBaseApplication.myApplication.lifecycleCallbacks.getActivitys();
+        List<Activity> activities = TKBaseApplication.lifecycleCallbacks.getActivitys();
         if (!StringUtils.isBlank(activities) && activities.size() > 1) {
             for (int i = 1; i < activities.size(); i++) {
                 Activity activity = activities.get(i);
@@ -570,8 +570,8 @@ public class PublicPracticalMethodFromJAVA {
      */
     public void closeStackActivities(int index) {
 //        LogUtils.i(ConfigConstants.TAG_ALL, "currentActivity =-= " + MyApplication.myApplication.lifecycleCallbacks.getActivityName(MyApplication.myApplication.lifecycleCallbacks.current().toString()));
-        for (int i = index; i < TKBaseApplication.myApplication.lifecycleCallbacks.count(); i++) {
-            List<Activity> activities = TKBaseApplication.myApplication.lifecycleCallbacks.getActivitys();
+        for (int i = index; i < TKBaseApplication.lifecycleCallbacks.count(); i++) {
+            List<Activity> activities = TKBaseApplication.lifecycleCallbacks.getActivitys();
 //            LogUtils.i(ConfigConstants.TAG_ALL, "activities =-= " + MyApplication.myApplication.lifecycleCallbacks.getActivityName(activities.get(i).toString()));
             activities.get(i).finish();
         }

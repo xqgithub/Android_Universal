@@ -1,5 +1,6 @@
 package com.universal.aifun.baselibrary.ui.activities
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
@@ -28,17 +29,17 @@ class StartUpActivity : BaseActivity(), StartUpView {
 
     override fun onBeforeSetContentLayout() {
         //1.判断是pad还是phone，设置横屏或者竖屏
-        if (ScreenTools.getInstance().isPad(this)) {
-            //隐藏状态栏
-            window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-            //设置横屏
-            ScreenTools.getInstance().setLandscape(this)
-        } else {
-            //状态栏状态设置
-            PublicPracticalMethodFromJAVA.getInstance().transparentStatusBar(this, false, true, -1)
-            //设置竖屏
-            ScreenTools.getInstance().setPortrait(this)
-        }
+//        if (ScreenTools.getInstance().isPad(this)) {
+//            //隐藏状态栏
+//            window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+//            //设置横屏
+//            ScreenTools.getInstance().setLandscape(this)
+//        } else {
+//            //状态栏状态设置
+//            PublicPracticalMethodFromJAVA.getInstance().transparentStatusBar(this, false, true, -1)
+//            //设置竖屏
+//            ScreenTools.getInstance().setPortrait(this)
+//        }
     }
 
     override fun getLayoutId(): Int {
@@ -82,6 +83,10 @@ class StartUpActivity : BaseActivity(), StartUpView {
             override fun allPermissionsGranted(mark: Int) {
                 if (mark == ConfigConstants.PERMISSIONS_GRANTED_STARTUPACTIVITY) {
                     LogUtils.i(ConfigConstants.TAG_ALL, "权限允许")
+                    PublicPracticalMethodFromJAVA.getInstance().intentToJump(
+                        this@StartUpActivity, TestTinkerActivity::class.java, -1, null, true,
+                        R.anim.activity_right_in, R.anim.activity_right_out
+                    )
                 }
             }
 

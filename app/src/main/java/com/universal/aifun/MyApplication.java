@@ -1,6 +1,8 @@
 package com.universal.aifun;
 
 
+import android.app.Application;
+import android.content.Intent;
 import android.text.TextUtils;
 
 import com.universal.aifun.baselibrary.TKBaseApplication;
@@ -12,6 +14,10 @@ import com.universal.aifun.baselibrary.TKExtManage;
  * Desc
  */
 public class MyApplication extends TKBaseApplication {
+
+    public MyApplication(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
+        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
+    }
 
     @Override
     public void onCreate() {

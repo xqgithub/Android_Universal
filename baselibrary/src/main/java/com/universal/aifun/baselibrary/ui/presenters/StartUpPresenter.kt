@@ -10,6 +10,7 @@ import com.universal.aifun.baselibrary.base.BasePresenter
 import com.universal.aifun.baselibrary.common.ConfigConstants
 import com.universal.aifun.baselibrary.help.MySPUtilsUser
 import com.universal.aifun.baselibrary.ui.activities.PermissionsActivity
+import com.universal.aifun.baselibrary.ui.activities.TestTinkerActivity
 import com.universal.aifun.baselibrary.ui.dialog.ServiceAgreementDialog
 import com.universal.aifun.baselibrary.ui.views.StartUpView
 import com.universal.aifun.baselibrary.utils.HandlerUtils
@@ -93,6 +94,10 @@ class StartUpPresenter(private var mContext: Context, private var startUpView: S
                         }
                     } else {
                         LogUtils.i(ConfigConstants.TAG_ALL, "准备跳转到首页")
+                        PublicPracticalMethodFromJAVA.getInstance().intentToJump(
+                            mContext as Activity, TestTinkerActivity::class.java, -1, null, true,
+                            R.anim.activity_right_in, R.anim.activity_right_out
+                        )
                     }
                 }
             }
@@ -127,6 +132,10 @@ class StartUpPresenter(private var mContext: Context, private var startUpView: S
                                 }
                             } else {
                                 LogUtils.i(ConfigConstants.TAG_ALL, "准备跳转到首页")
+                                PublicPracticalMethodFromJAVA.getInstance().intentToJump(
+                                    mContext as Activity, TestTinkerActivity::class.java, -1, null, true,
+                                    R.anim.activity_right_in, R.anim.activity_right_out
+                                )
                             }
                         }
                     } else {

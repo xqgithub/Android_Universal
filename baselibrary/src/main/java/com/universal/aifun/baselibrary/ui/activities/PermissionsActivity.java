@@ -18,7 +18,6 @@ import com.universal.aifun.baselibrary.common.ConfigConstants;
 import com.universal.aifun.baselibrary.common.VariableConfig;
 import com.universal.aifun.baselibrary.utils.PermissionsChecker;
 import com.universal.aifun.baselibrary.utils.PublicPracticalMethodFromJAVA;
-import com.universal.aifun.baselibrary.utils.ScreenTools;
 
 /**
  * Created by XQ on 2017/4/15.
@@ -68,14 +67,14 @@ public class PermissionsActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //1.判断是pad还是phone，设置横屏或者竖屏
-        if (ScreenTools.getInstance().isPad(this)) {
-            //设置横屏
-            ScreenTools.getInstance().setLandscape(this);
-        } else {
-            //设置竖屏
-            ScreenTools.getInstance().setPortrait(this);
-        }
+//        //1.判断是pad还是phone，设置横屏或者竖屏
+//        if (ScreenTools.getInstance().isPad(this)) {
+//            //设置横屏
+//            ScreenTools.getInstance().setLandscape(this);
+//        } else {
+//            //设置竖屏
+//            ScreenTools.getInstance().setPortrait(this);
+//        }
 
 
         if (getIntent() == null || !getIntent().hasExtra(ConfigConstants.EXTRA_PERMISSIONS)) {
