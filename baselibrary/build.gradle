@@ -189,11 +189,7 @@ dependencies {
 //    api project(':jpushlibrary')
 
 
+    /** 微信tinker 包 **/
     //核心sdk库
     api("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
-//注解编译器，生成application的时候用
-    annotationProcessor("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
-    compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
-
-
 }

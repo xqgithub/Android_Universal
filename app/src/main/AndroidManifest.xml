@@ -4,7 +4,7 @@
     package="com.universal.aifun">
 
     <application
-        android:name="com.universal.aifun.baselibrary.SampleApplication"
+        android:name=".SampleApplication"
         android:allowBackup="false"
         android:extractNativeLibs="true"
         android:hardwareAccelerated="true"

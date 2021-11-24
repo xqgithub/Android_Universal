@@ -11,10 +11,8 @@ import androidx.multidex.MultiDex;
 import com.facebook.stetho.Stetho;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tencent.mmkv.MMKV;
-import com.tencent.tinker.anno.DefaultLifeCycle;
 import com.tencent.tinker.entry.DefaultApplicationLike;
 import com.tencent.tinker.lib.tinker.Tinker;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.universal.aifun.baselibrary.database.DBHelperModule;
 import com.universal.aifun.baselibrary.help.MyActivityLifecycleCallbacks;
 import com.universal.aifun.baselibrary.help.MySPUtilsUser;
@@ -31,9 +29,6 @@ import com.universal.aifun.baselibrary.utils.ScreenTools;
  * author:joker
  * 自定义Application
  */
-@DefaultLifeCycle(application = ".SampleApplication",
-        flags = ShareConstants.TINKER_ENABLE_ALL,
-        loadVerifyFlag = false)
 public class TKBaseApplication extends DefaultApplicationLike {
 
     public static Application myApplication;

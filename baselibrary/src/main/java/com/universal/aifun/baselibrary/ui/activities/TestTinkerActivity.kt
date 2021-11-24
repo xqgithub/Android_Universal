@@ -42,8 +42,8 @@ class TestTinkerActivity : BaseActivity(), TestTinkerView {
             mPresenter.clearPath()
         }
         tv_toast.setOnClickListener {
-            LogUtils.i(ConfigConstants.TAG_ALL, "使用Tinker前的内容,我叫罗杰1")
-//            LogUtils.i(ConfigConstants.TAG_ALL, "使用Tinker后的内容,我叫路飞2")
+//            LogUtils.i(ConfigConstants.TAG_ALL, "使用Tinker前的内容,我叫罗杰1")
+            LogUtils.i(ConfigConstants.TAG_ALL, "使用Tinker后的内容,我叫路飞2")
 //            LogUtils.i(ConfigConstants.TAG_ALL, "我叫索隆，是一个剑士3")
 //            LogUtils.i(ConfigConstants.TAG_ALL, "我叫娜美，是一个航海士4")
         }

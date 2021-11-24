@@ -21,19 +21,13 @@ public class TKExtManage {
 
     private static volatile TKExtManage mInstance;
 
+    //tinker_base_id
+    private String tinker_base_id = "";
+    //tinkerId
+    private String tinker_id = "";
+    //tinkerMessage
+    private String tinker_message = "";
 
-    //企业ID
-    private String companyId = "";
-    //企业域名
-    private String companyDomain = "";
-
-    private String homeExtUrl = "";
-    private boolean isShowHomeExtBtn = false;
-
-    // 用户协议 或者 隐私协议  关键字
-    private String userAgreementUrl = "";
-
-    private int launcherRes;
 
     private TKExtManage() {
         if (mInstance != null) {
@@ -52,49 +46,28 @@ public class TKExtManage {
         return mInstance;
     }
 
-
-    // 第三方首页 管理
-    public String getHomeExtUrl() {
-        return homeExtUrl;
+    public String getTinker_base_id() {
+        return tinker_base_id;
     }
 
-    public void setHomeExtUrl(String homeExtUrl) {
-        this.homeExtUrl = homeExtUrl;
+    public void setTinker_base_id(String tinker_base_id) {
+        this.tinker_base_id = tinker_base_id;
     }
 
-    // 第三方首页按钮是否 展示
-    public boolean isShowHomeExtBtn() {
-        return isShowHomeExtBtn;
+    public String getTinker_id() {
+        return tinker_id;
     }
 
-    public void setShowHomeExtBtn(boolean showHomeExtBtn) {
-        isShowHomeExtBtn = showHomeExtBtn;
+    public void setTinker_id(String tinker_id) {
+        this.tinker_id = tinker_id;
     }
 
-
-    // 设置companyId
-    public String getCompanyId() {
-        return companyId;
+    public String getTinker_message() {
+        return tinker_message;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId;
-    }
-
-    public String getUserAgreementUrl() {
-        return userAgreementUrl;
-    }
-
-    public void setUserAgreementUrl(String userAgreementUrl) {
-        this.userAgreementUrl = userAgreementUrl;
-    }
-
-    public String getCompanyDomain() {
-        return companyDomain;
-    }
-
-    public void setCompanyDomain(String companyDomain) {
-        this.companyDomain = companyDomain;
+    public void setTinker_message(String tinker_message) {
+        this.tinker_message = tinker_message;
     }
 
     // 获取图标icon

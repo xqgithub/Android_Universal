@@ -30,7 +30,6 @@ import androidx.annotation.Nullable;
 
 import com.universal.aifun.baselibrary.R;
 import com.universal.aifun.baselibrary.TKBaseApplication;
-import com.universal.aifun.baselibrary.TKExtManage;
 import com.universal.aifun.baselibrary.base.BaseActivity;
 import com.universal.aifun.baselibrary.common.ConfigConstants;
 import com.universal.aifun.baselibrary.help.MySPUtilsLanguage;
@@ -130,10 +129,10 @@ public class UserAgreementWebView extends BaseActivity implements View.OnClickLi
         }
         //判断展示类型，用户协议还是隐私政策
         if (TYPE == ConfigConstants.USERAGREEMENT) {//用户协议
-            linkurl = String.format(getResources().getString(R.string.protocol_useragreement_url), TKExtManage.getInstance().getUserAgreementUrl());
+//            linkurl = String.format(getResources().getString(R.string.protocol_useragreement_url), TKExtManage.getInstance().getUserAgreementUrl());
             tv_title.setText(R.string.personalsettings_useragreement);
         } else {//隐私政策
-            linkurl = String.format(getResources().getString(R.string.protocol_userprivacypolicy_url), TKExtManage.getInstance().getUserAgreementUrl());
+//            linkurl = String.format(getResources().getString(R.string.protocol_userprivacypolicy_url), TKExtManage.getInstance().getUserAgreementUrl());
             tv_title.setText(R.string.personalsettings_privacypolicy);
         }
 

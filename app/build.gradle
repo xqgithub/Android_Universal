@@ -47,14 +47,9 @@ android {
             applicationId "com.universal.aifun"
             versionName cfg.versionName
             versionCode cfg.versionCode
-
-            buildConfigField "String", "company_id", '""'
-            buildConfigField "String", "company_domain", '"www"'
-
-            buildConfigField "String", "home_ext_url", '""'
-//            buildConfigField "boolean", "is_show_home_ext_btn", "false"
-
-            buildConfigField "String", "user_agreement_ext_url", '"menke"'
+            buildConfigField "String", "tinker_id", "\"${cfg.versionName}\""
+            buildConfigField "String", "tinker_base_id", "\"${getTinkerIdValue()}\""
+            buildConfigField "String", "tinker_message", '"更新包1"'
 
 
             // app_logo
@@ -151,6 +146,13 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    /** 微信tinker 引用包 **/
+    //注解编译器，生成application的时候用
+    annotationProcessor("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+    compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+
+
     /** 引入module **/
     implementation project(':baselibrary')
     // implementation project(path:':jpushlibrary', configuration: 'default')
@@ -159,7 +161,7 @@ dependencies {
 
 /** 微信tinker 配置  **/
 def bakPath = file("${buildDir}/bakApk/")
-def filedir = "app-1123-16-53-24"
+def filedir = "app-1124-09-20-45"
 
 ext {
     //是否启用tinker

@@ -11,6 +11,7 @@ import com.tencent.tinker.lib.tinker.Tinker
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import com.tencent.tinker.loader.shareutil.ShareConstants
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals
+import com.universal.aifun.baselibrary.TKExtManage
 import com.universal.aifun.baselibrary.base.BasePresenter
 import com.universal.aifun.baselibrary.common.ConfigConstants
 import com.universal.aifun.baselibrary.ui.views.TestTinkerView
@@ -58,19 +59,18 @@ class TestTinkerPresenter constructor(private var mContext: Context, private var
         val tinker = Tinker.with(mContext)
         if (tinker.isTinkerLoaded) {
             sb.append(String.format("[patch is loaded] \n"))
-            sb.append(String.format("[buildConfig TINKER_ID] %s \n", "1.9.1"))
-            sb.append(String.format("[buildConfig BASE_TINKER_ID] %s \n", "1.9.1"))
+            sb.append(String.format("[buildConfig TINKER_ID] %s \n", TKExtManage.getInstance().tinker_id))
+            sb.append(String.format("[buildConfig BASE_TINKER_ID] %s \n", TKExtManage.getInstance().tinker_base_id))
 
-            sb.append(String.format("[buildConfig MESSSAGE] %s \n", "I am the base apk"))
+            sb.append(String.format("[buildConfig MESSSAGE] %s \n", TKExtManage.getInstance().tinker_message))
             sb.append(String.format("[TINKER_ID] %s \n", tinker.tinkerLoadResultIfPresent.getPackageConfigByName(ShareConstants.TINKER_ID)))
             sb.append(String.format("[packageConfig patchMessage] %s \n", tinker.tinkerLoadResultIfPresent.getPackageConfigByName("patchMessage")))
             sb.append(String.format("[TINKER_ID Rom Space] %d k \n", tinker.tinkerRomSpace))
         } else {
             sb.append(String.format("[patch is not loaded] \n"))
-            sb.append(String.format("[buildConfig TINKER_ID] %s \n", "1.9.1"))
-            sb.append(String.format("[buildConfig BASE_TINKER_ID] %s \n", "1.9.1"))
-
-            sb.append(String.format("[buildConfig MESSSAGE] %s \n", "I am the base apk"))
+            sb.append(String.format("[buildConfig TINKER_ID] %s \n", TKExtManage.getInstance().tinker_id))
+            sb.append(String.format("[buildConfig BASE_TINKER_ID] %s \n", TKExtManage.getInstance().tinker_base_id))
+             sb.append(String.format("[buildConfig MESSSAGE] %s \n", TKExtManage.getInstance().tinker_message))
             sb.append(String.format("[TINKER_ID] %s \n", ShareTinkerInternals.getManifestTinkerID(mContext)))
         }
         sb.append(String.format("[BaseBuildInfo Message] %s \n", ""))
