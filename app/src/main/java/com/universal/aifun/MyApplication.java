@@ -12,7 +12,7 @@ import com.universal.aifun.baselibrary.TKExtManage;
 /**
  * 自定义Application
  */
-@DefaultLifeCycle(application = ".SampleApplication",
+@DefaultLifeCycle(application = "com.universal.aifun.SampleApplication",
         flags = ShareConstants.TINKER_ENABLE_ALL,
         loadVerifyFlag = false)
 public class MyApplication extends TKBaseApplication {

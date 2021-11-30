@@ -105,6 +105,10 @@
         <meta-data
             android:name="APP_SCHEME"
             android:value="${app_scheme}" />
+
+        <meta-data
+            android:name="TINKER_ID"
+            android:value="tinker_id_1.0.0" />
     </application>
 
 </manifest>

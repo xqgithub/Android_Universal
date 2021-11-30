@@ -9,8 +9,6 @@ import android.os.Build;
 import androidx.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
-import com.tencent.bugly.crashreport.CrashReport;
-import com.tencent.mmkv.MMKV;
 import com.tencent.tinker.entry.DefaultApplicationLike;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.universal.aifun.baselibrary.database.DBHelperModule;
@@ -103,23 +101,6 @@ public class TKBaseApplication extends DefaultApplicationLike {
     private void initActivityLifecycle() {
         myApplication.registerActivityLifecycleCallbacks(lifecycleCallbacks);
     }
-
-
-    public void initBugly() {
-        // a6bb433246（公司的）  5b29dde48c（自己的） //正式需改
-        String buglyKey = "5b29dde48c";
-        if ("release".equals(BuildConfig.host)) {
-            buglyKey = "a6bb433246";
-        } else {
-            buglyKey = "5b29dde48c";
-        }
-        CrashReport.initCrashReport(myApplication, buglyKey, false);
-    }
-
-    public void initKV() {
-        MMKV.initialize(myApplication);
-    }
-
 
     @Override
     public void onBaseContextAttached(Context base) {
